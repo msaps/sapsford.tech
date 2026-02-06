@@ -28,6 +28,20 @@ export default function Projects() {
                   {project.description}
                 </p>
               </div>
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={`mt-4 w-full rounded-lg object-cover ${project.imageDark ? "dark:hidden" : ""}`}
+                />
+              )}
+              {project.imageDark && (
+                <img
+                  src={project.imageDark}
+                  alt={project.title}
+                  className="mt-4 hidden w-full rounded-lg object-cover dark:block"
+                />
+              )}
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span

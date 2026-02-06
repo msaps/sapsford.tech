@@ -66,11 +66,12 @@ interface BentoCardProps {
 }
 
 export function BentoCard({ size, gradient, children, href }: BentoCardProps) {
-  const className = `${sizeClasses[size] ?? ""} ${mobileSizeClasses[size] ?? ""} rounded-2xl bg-gradient-to-br ${gradient} p-6 flex flex-col justify-between min-h-[180px] md:min-h-[220px] transition-shadow hover:shadow-lg`;
+  const gridClassName = `${sizeClasses[size] ?? ""} ${mobileSizeClasses[size] ?? ""}`;
+  const cardClassName = `rounded-2xl bg-gradient-to-br ${gradient} p-6 flex flex-col justify-between min-h-[180px] md:min-h-[220px] transition-shadow hover:shadow-lg h-full`;
 
   const content = (
     <motion.div
-      className={className}
+      className={cardClassName}
       variants={itemVariants}
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -81,11 +82,11 @@ export function BentoCard({ size, gradient, children, href }: BentoCardProps) {
 
   if (href) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer">
+      <a href={href} target="_blank" rel="noopener noreferrer" className={gridClassName}>
         {content}
       </a>
     );
   }
 
-  return content;
+  return <div className={gridClassName}>{content}</div>;
 }

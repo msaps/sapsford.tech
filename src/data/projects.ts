@@ -5,36 +5,40 @@ export interface Project {
   tags: string[];
   size: "small" | "medium" | "large" | "wide";
   gradient: string;
+  image?: string;
+  imageDark?: string;
 }
 
 export const projects: Project[] = [
   {
     title: "Loungebird",
-    description:
-      "Real-time airport lounge occupancy tracking for iOS, iPad and Mac.",
+    description: "Real-time airport lounge occupancy tracking for iPhone, iPad and Mac.",
     url: "https://loungebird.app",
-    tags: ["Swift", "iOS", "SwiftUI"],
+    tags: ["iOS", "macOS", "TypeScript"],
     size: "large",
-    gradient: "from-amber-50 to-orange-100 dark:from-amber-950 dark:to-orange-950",
+    image: "/public/images/loungebird-light.png",
+    imageDark: "/public/images/loungebird-dark.png",
+    gradient: "from-[#f0f5ff] to-[#f1f5ff] dark:from-[#0c3048] dark:to-[#002035]",
   },
   {
-    title: "Project Alpha",
-    description: "A placeholder project showcasing modern web technologies.",
-    tags: ["React", "TypeScript"],
+    title: "Tabman",
+    description: "A powerful paging view controller with interactive indicator bars.",
+    url: "https://github.com/uias/Tabman",
+    tags: ["★ 2.9K", "Swift", "Open Source"],
+    size: "small",
+    gradient: "from-violet-50 to-purple-100 dark:from-violet-950 dark:to-purple-950",
+  },
+  {
+    title: "Pageboy",
+    description: "UIPageViewController done properly.",
+    url: "https://github.com/uias/Pageboy",
+    tags: ["★ 2K", "Swift", "Open Source"],
     size: "small",
     gradient: "from-blue-50 to-indigo-100 dark:from-blue-950 dark:to-indigo-950",
   },
   {
-    title: "Project Beta",
-    description: "Another placeholder project with innovative features.",
-    tags: ["Swift", "Vapor"],
-    size: "small",
-    gradient: "from-emerald-50 to-teal-100 dark:from-emerald-950 dark:to-teal-950",
-  },
-  {
     title: "Project Gamma",
-    description:
-      "A wide placeholder project demonstrating cross-platform development.",
+    description: "A wide placeholder project demonstrating cross-platform development.",
     tags: ["Kotlin", "Android"],
     size: "wide",
     gradient: "from-violet-50 to-purple-100 dark:from-violet-950 dark:to-purple-950",
