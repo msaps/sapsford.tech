@@ -67,7 +67,7 @@ interface BentoCardProps {
 
 export function BentoCard({ size, gradient, children, href }: BentoCardProps) {
   const gridClassName = `${sizeClasses[size] ?? ""} ${mobileSizeClasses[size] ?? ""}`;
-  const cardClassName = `rounded-2xl bg-gradient-to-br ${gradient} p-6 flex flex-col justify-between min-h-[180px] md:min-h-[220px] transition-shadow hover:shadow-lg h-full`;
+  const cardClassName = `rounded-2xl bg-gradient-to-br ${gradient} p-6 flex flex-col justify-between min-h-[180px] md:min-h-[220px] h-full`;
 
   const content = (
     <motion.div

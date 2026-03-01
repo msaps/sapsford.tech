@@ -3,7 +3,7 @@ import { projects } from "../data/projects";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-16">
       <div className="mx-auto max-w-5xl px-6">
         <span className="mb-4 inline-block rounded-full bg-gray-900 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white dark:bg-gray-100 dark:text-gray-900">
           Projects
@@ -24,7 +24,7 @@ export default function Projects() {
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   {project.title}
                 </h3>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                <p className="mt-1 text-sm text-gray-600 dark:text-white/80">
                   {project.description}
                 </p>
               </div>
@@ -46,7 +46,7 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-black/5 px-2.5 py-0.5 text-xs font-medium text-gray-700 dark:bg-white/10 dark:text-gray-300"
+                    className="rounded-full bg-black/5 px-2.5 py-0.5 text-xs font-medium text-gray-700 dark:bg-white/10 dark:text-white"
                   >
                     {tag}
                   </span>

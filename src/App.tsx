@@ -6,7 +6,7 @@ import Contact from "./sections/Contact";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 dark:bg-black dark:text-white">
+    <div className="min-h-screen text-gray-900 dark:text-white">
       <Header />
       <main>
         <Hero />

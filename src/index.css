@@ -13,6 +13,14 @@
 
 html {
   scroll-behavior: smooth;
+  background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 50%, #f5f0ff 100%);
+  min-height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: linear-gradient(135deg, #0d1520 0%, var(--color-surface-dark) 50%, #1a1525 100%);
+  }
 }
 
 [id] {

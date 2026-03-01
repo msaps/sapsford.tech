@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description: "A powerful paging view controller with interactive indicator bars.",
     url: "https://github.com/uias/Tabman",
     tags: ["★ 2.9K", "iOS", "Open Source"],
-    size: "small",
+    size: "wide",
     gradient: "from-violet-50 to-purple-100 dark:from-violet-950 dark:to-purple-950",
   },
   {
@@ -33,21 +33,7 @@ export const projects: Project[] = [
     description: "A simple, highly informative page view controller.",
     url: "https://github.com/uias/Pageboy",
     tags: ["★ 2K", "iOS", "Open Source"],
-    size: "small",
-    gradient: "from-blue-50 to-indigo-100 dark:from-blue-950 dark:to-indigo-950",
-  },
-  {
-    title: "XH558 - Vulcan to the Sky",
-    description: "A wide placeholder project demonstrating cross-platform development.",
-    tags: ["iOS", "Android"],
-    size: "large",
-    gradient: "from-violet-50 to-purple-100 dark:from-violet-950 dark:to-purple-950",
-  },
-  {
-    title: "AviationLogic - Apps for General Aviation",
-    description: "A wide placeholder project demonstrating cross-platform development.",
-    tags: ["iOS"],
     size: "wide",
-    gradient: "from-violet-50 to-purple-100 dark:from-violet-950 dark:to-purple-950",
+    gradient: "from-blue-50 to-indigo-100 dark:from-blue-950 dark:to-indigo-950",
   },
 ];
