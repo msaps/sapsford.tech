@@ -14,9 +14,7 @@ export default function Header() {
   useEffect(() => {
     const onScroll = () => {
       // If scrolled to the bottom, activate the last section
-      const atBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 50;
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
       if (atBottom) {
         setActiveSection(navLinks[navLinks.length - 1].href);
         return;
@@ -57,7 +55,7 @@ export default function Header() {
             href={link.href}
             className={`rounded-full px-5 py-2 text-base font-medium transition-colors ${
               activeSection === link.href
-                ? "bg-[#0A84FF]/10 text-[#0A84FF]"
+                ? "bg-[#0A84FF]/10 text-[#0A84FF] dark:bg-[#5AC8FA]/10 dark:text-[#5AC8FA]"
                 : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
             }`}
           >
