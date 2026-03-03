@@ -54,7 +54,7 @@ export default function SocialLinks() {
           href={social.href}
           target={social.href.startsWith("http") ? "_blank" : undefined}
           rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-          className="flex items-center gap-2 rounded-full bg-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-all hover:bg-gray-100 hover:text-gray-900 dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-500 dark:hover:text-white"
+          className="flex items-center gap-2 rounded-full bg-[#0A84FF]/10 px-4 py-2 text-sm font-medium text-[#0A84FF] backdrop-blur-sm transition-all hover:bg-[#0A84FF]/20 dark:bg-[#5AC8FA]/10 dark:text-[#5AC8FA] dark:hover:bg-[#5AC8FA]/20"
         >
           {social.icon}
           <span>{social.label}</span>

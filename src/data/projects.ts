@@ -18,7 +18,7 @@ export const projects: Project[] = [
     size: "large",
     image: "/images/loungebird-light.png",
     imageDark: "/images/loungebird-dark.png",
-    gradient: "from-[#f0f5ff] to-[#f1f5ff] dark:from-[#0c3048] dark:to-[#002035]",
+    gradient: "from-sky-200 to-blue-200 dark:from-blue-800 dark:to-sky-900",
   },
   {
     title: "Tabman",
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     url: "https://github.com/uias/Tabman",
     tags: ["★ 2.9K", "iOS", "Open Source"],
     size: "wide",
-    gradient: "from-violet-50 to-purple-100 dark:from-violet-950 dark:to-purple-950",
+    gradient: "from-violet-200 to-purple-200 dark:from-violet-950 dark:to-purple-950",
   },
   {
     title: "Pageboy",
@@ -34,6 +34,6 @@ export const projects: Project[] = [
     url: "https://github.com/uias/Pageboy",
     tags: ["★ 2K", "iOS", "Open Source"],
     size: "wide",
-    gradient: "from-blue-50 to-indigo-100 dark:from-blue-950 dark:to-indigo-950",
+    gradient: "from-blue-100 to-indigo-200 dark:from-blue-950 dark:to-indigo-950",
   },
 ];

@@ -13,13 +13,13 @@
 
 html {
   scroll-behavior: smooth;
-  background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 50%, #f5f0ff 100%);
+  background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 40%, #ede9fe 100%);
   min-height: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
-    background: linear-gradient(135deg, #0d1520 0%, var(--color-surface-dark) 50%, #1a1525 100%);
+    background: linear-gradient(135deg, #0f1a2e 0%, #151922 40%, #1a1530 100%);
   }
 }
 
@@ -31,6 +31,24 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  background: linear-gradient(to bottom, #e0e7ff 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 40;
+}
+
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background: linear-gradient(to bottom, #0f1a2e 0%, transparent 100%);
+  }
 }
 
 ::selection {
