@@ -13,7 +13,9 @@ export default function Contact() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl dark:text-white">Get in touch</h2>
-          <p className="mt-3 max-w-lg text-gray-600 dark:text-gray-400">Feel free to shoot me a message</p>
+          <p className="mt-3 max-w-lg text-gray-600 dark:text-gray-400">
+            Interested in a project or something else? I'd love to hear from you.
+          </p>
           <div className="mt-6">
             <SocialLinks />
           </div>
