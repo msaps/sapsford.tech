@@ -19,7 +19,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   html {
-    background: linear-gradient(135deg, #0d1520 0%, var(--color-surface-dark) 50%, #1a1525 100%);
+    background: linear-gradient(135deg, #0f1a2e 0%, #151922 40%, #1a1530 100%);
   }
 }
 
