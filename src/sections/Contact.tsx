@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="contact" className="py-16">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
-          className="rounded-2xl bg-gray-200 p-8 sm:p-12 dark:bg-gray-800"
+          className="rounded-2xl bg-white/60 p-8 ring-1 ring-black/5 backdrop-blur-sm sm:p-12 dark:bg-white/5 dark:ring-white/10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
