@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -10,6 +10,7 @@ const navLinks = [
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("#home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -40,7 +41,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5"
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 px-4"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
@@ -48,7 +49,8 @@ export default function Header() {
         ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
       }}
     >
-      <nav className="flex items-center gap-2 rounded-full border border-white/80 bg-white/80 px-3 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-black/60">
+      {/* Desktop Navigation */}
+      <nav className="hidden md:flex items-center gap-2 rounded-full border border-white/80 bg-white/80 px-3 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-black/60">
         {navLinks.map((link) => (
           <a
             key={link.href}
@@ -82,6 +84,76 @@ export default function Header() {
           Resume
         </a>
       </nav>
+
+      {/* Mobile Navigation */}
+      <div className="md:hidden w-full max-w-xs">
+        <div className="rounded-2xl border border-white/80 bg-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-black/60 overflow-hidden">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex items-center justify-between w-full px-5 py-2"
+            aria-label="Toggle menu"
+          >
+            <span className="text-base font-medium text-[#0A84FF] dark:text-[#5AC8FA]">
+              {navLinks.find((link) => link.href === activeSection)?.label || "Menu"}
+            </span>
+            <motion.svg
+              className="w-5 h-5 text-gray-500 dark:text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              animate={{ rotate: mobileMenuOpen ? 180 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </motion.svg>
+          </button>
+
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="overflow-hidden"
+              >
+                <div className="border-t border-gray-200/50 dark:border-white/10 pb-3">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-5 py-2.5 text-base font-medium transition-colors ${
+                        activeSection === link.href
+                          ? "text-[#0A84FF] bg-[#0A84FF]/10 dark:text-[#5AC8FA] dark:bg-[#5AC8FA]/10"
+                          : "text-gray-700 hover:bg-gray-100/50 dark:text-gray-300 dark:hover:bg-white/5"
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                  <div className="px-3 pt-2">
+                    <a
+                      href="/docs/Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block rounded-full bg-[#0A84FF] px-5 py-2 text-center text-base font-medium text-white transition-colors hover:bg-[#0066CC] dark:bg-[#5AC8FA] dark:text-black dark:hover:bg-[#4AB8EA]"
+                    >
+                      Resume
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
     </motion.header>
   );
 }
