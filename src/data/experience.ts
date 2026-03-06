@@ -3,7 +3,7 @@ export interface Experience {
   role: string;
   period: string;
   description: string;
-  size: "small" | "medium" | "wide";
+  size: "small" | "medium";
   gradient: string;
   url?: string;
 }
@@ -15,7 +15,7 @@ export const experience: Experience[] = [
     period: "2021 - Present",
     description:
       "Leading cross-functional teams to support a digital health platform used by hundreds of thousands of patients across Europe.",
-    size: "wide",
+    size: "medium",
     gradient: "from-emerald-100 to-emerald-200 dark:from-emerald-600 dark:to-teal-700",
     url: "https://www.oviva.com",
   },

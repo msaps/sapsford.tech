@@ -27,17 +27,18 @@ const itemVariants = {
 
 const sizeClasses: Record<string, string> = {
   small: "col-span-1 row-span-1",
-  medium: "col-span-1 row-span-1",
+  medium: "col-span-2 row-span-1",
   large: "col-span-2 row-span-2",
-  wide: "col-span-2 row-span-1",
 };
 
 const mobileSizeClasses: Record<string, string> = {
-  small: "max-md:col-span-1",
-  medium: "max-md:col-span-1",
+  small: "max-md:col-span-2",
+  medium: "max-md:col-span-2",
   large: "max-md:col-span-2",
-  wide: "max-md:col-span-2",
-  full: "max-md:col-span-2",
+};
+
+const mobileHeightClasses: Record<string, string> = {
+  medium: "max-md:min-h-[240px]",
 };
 
 interface BentoGridProps {
@@ -67,7 +68,8 @@ interface BentoCardProps {
 
 export function BentoCard({ size, gradient, children, href }: BentoCardProps) {
   const gridClassName = `${sizeClasses[size] ?? ""} ${mobileSizeClasses[size] ?? ""}`;
-  const cardClassName = `rounded-2xl bg-gradient-to-br ${gradient} p-6 flex flex-col justify-between min-h-[180px] md:min-h-[220px] h-full`;
+  const mobileHeight = mobileHeightClasses[size] ?? "";
+  const cardClassName = `rounded-2xl bg-gradient-to-br ${gradient} p-6 flex flex-col justify-between min-h-[180px] md:min-h-[220px] ${mobileHeight} h-full`;
 
   const content = (
     <motion.div

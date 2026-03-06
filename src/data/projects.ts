@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   url?: string;
   tags: string[];
-  size: "small" | "medium" | "large" | "wide";
+  size: "small" | "medium" | "large";
   gradient: string;
   image?: string;
   imageDark?: string;
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description: "A powerful paging view controller with interactive indicator bars.",
     url: "https://github.com/uias/Tabman",
     tags: ["★ 2.9K", "iOS", "Open Source"],
-    size: "wide",
+    size: "medium",
     gradient: "from-violet-200 to-purple-200 dark:from-violet-950 dark:to-purple-950",
   },
   {
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     description: "A simple, highly informative page view controller.",
     url: "https://github.com/uias/Pageboy",
     tags: ["★ 2K", "iOS", "Open Source"],
-    size: "wide",
+    size: "medium",
     gradient: "from-blue-100 to-indigo-200 dark:from-blue-950 dark:to-indigo-950",
   },
 ];
