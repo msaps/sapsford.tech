@@ -62,6 +62,14 @@ export default function Header() {
             {link.label}
           </a>
         ))}
+        <a
+          href="/docs/Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-1 rounded-full bg-[#0A84FF] px-5 py-2 text-base font-medium text-white transition-colors hover:bg-[#0066CC] dark:bg-[#5AC8FA] dark:text-black dark:hover:bg-[#4AB8EA]"
+        >
+          Resume
+        </a>
       </nav>
     </motion.header>
   );
