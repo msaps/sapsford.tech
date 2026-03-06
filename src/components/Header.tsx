@@ -53,15 +53,34 @@ export default function Header() {
           <a
             key={link.href}
             href={link.href}
-            className={`rounded-full px-5 py-2 text-base font-medium transition-colors ${
+            className={`relative rounded-full px-5 py-2 text-base font-medium transition-colors ${
               activeSection === link.href
-                ? "bg-[#0A84FF]/10 text-[#0A84FF] dark:bg-[#5AC8FA]/10 dark:text-[#5AC8FA]"
+                ? "text-[#0A84FF] dark:text-[#5AC8FA]"
                 : "text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
             }`}
           >
-            {link.label}
+            {activeSection === link.href && (
+              <motion.span
+                layoutId="nav-indicator"
+                className="absolute inset-0 rounded-full bg-[#0A84FF]/10 dark:bg-[#5AC8FA]/10"
+                transition={{
+                  type: "spring",
+                  stiffness: 350,
+                  damping: 30,
+                }}
+              />
+            )}
+            <span className="relative z-10">{link.label}</span>
           </a>
         ))}
+        <a
+          href="/docs/Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-1 rounded-full bg-[#0A84FF] px-5 py-2 text-base font-medium text-white transition-colors hover:bg-[#0066CC] dark:bg-[#5AC8FA] dark:text-black dark:hover:bg-[#4AB8EA]"
+        >
+          Resume
+        </a>
       </nav>
     </motion.header>
   );
