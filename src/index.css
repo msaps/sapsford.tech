@@ -9,46 +9,67 @@
   --color-muted: #6b7280;
   --color-border: #e5e7eb;
   --color-border-dark: #2d333b;
+  --top-safe-area: env(safe-area-inset-top, 0px);
+  --top-fade-size: 5rem;
+  --top-fade-height: calc(var(--top-fade-size) + var(--top-safe-area));
+  --top-fade-bg: #e0e7ff;
+  --page-bg-color: #f8fafc;
+  --page-bg: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 40%, #ede9fe 100%);
 }
 
 html {
   scroll-behavior: smooth;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 40%, #ede9fe 100%);
+  color-scheme: light;
+  background-color: var(--page-bg-color);
+  background: var(--page-bg);
   min-height: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    --page-bg-color: #151922;
+    --page-bg: linear-gradient(135deg, #0f1a2e 0%, #151922 40%, #1a1530 100%);
+    --top-fade-bg: #0f1a2e;
+  }
+
   html {
-    background: linear-gradient(135deg, #0f1a2e 0%, #151922 40%, #1a1530 100%);
+    color-scheme: dark;
   }
 }
 
 [id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: var(--top-fade-height);
 }
 
 body {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--page-bg-color);
+  background: var(--page-bg);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5rem;
-  background: linear-gradient(to bottom, #e0e7ff 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 40;
+#root {
+  min-height: 100vh;
+  background-color: var(--page-bg-color);
+  background: var(--page-bg);
 }
 
-@media (prefers-color-scheme: dark) {
-  body::before {
-    background: linear-gradient(to bottom, #0f1a2e 0%, transparent 100%);
-  }
+.top-fade-mask {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--top-fade-height);
+  background:
+    linear-gradient(
+      to bottom,
+      var(--top-fade-bg) 0,
+      var(--top-fade-bg) var(--top-safe-area),
+      transparent var(--top-fade-height)
+    );
+  pointer-events: none;
+  z-index: 40;
 }
 
 ::selection {

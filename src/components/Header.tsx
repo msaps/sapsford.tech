@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 px-4"
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-[calc(env(safe-area-inset-top,0px)+1.25rem)]"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
