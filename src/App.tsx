@@ -8,6 +8,7 @@ export default function App() {
   return (
     <div className="min-h-screen text-gray-900 dark:text-white">
       <Header />
+      <div aria-hidden="true" className="top-fade-mask" />
       <main>
         <Hero />
         <Projects />
