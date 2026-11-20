@@ -25,3 +25,7 @@ dist-ssr
 
 # Claude Code
 .claude
+
+# Environment files
+.env
+.env.*
